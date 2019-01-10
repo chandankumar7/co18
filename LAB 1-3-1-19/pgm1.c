@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-//i am chandu chai wealla
 void decimal_binary(int);
 void binary_decimal(int);
 int main()

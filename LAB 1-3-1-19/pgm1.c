@@ -1,3 +1,5 @@
+//program to convert binary to decimal and decimal to binary//
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
@@ -65,3 +67,4 @@ void binary_decimal(int n)
     printf("Decimal equivalent of the binary number %d is:%d",num,sum);
     printf("\n\n");
 }
+

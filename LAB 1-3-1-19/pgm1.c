@@ -42,7 +42,7 @@ void decimal_binary(int n)
 	for(i=0;n>0;i++)
         {
             p[i]=n%2;//remainder
-            n=n/2;        //quotient
+            n=n/2; //quotient
         }
 
 	printf("The binary equivalent of %d is: ",num);

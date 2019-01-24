@@ -8,6 +8,7 @@ int main()
     char hex[n];
     printf("Enter  hexadecimal  number: ");
     scanf("%s",hex);
+
 for(i=0;hex[i]!='\0';i++)
 {
     switch(hex[i])

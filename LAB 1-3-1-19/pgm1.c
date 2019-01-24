@@ -1,5 +1,3 @@
-//program to convert binary to decimal and decimal to binary//
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
@@ -7,14 +5,13 @@ void decimal_binary(int);
 void binary_decimal(int);
 int main()
 {
-
-	int num,ch;
+          int num,ch;
 	do
 	{
 		printf("\n1.Decimal to binary");
 		printf("\n2.Binary to decimal");
 		printf("\n3.exit");
-		printf("\nEnter your choice: ");
+		printf("\n\nEnter your choice: ");
 		scanf("%d",&ch);
 		switch(ch)
 		{
@@ -31,22 +28,35 @@ int main()
 		}
 	}while(ch!=4);
 	return(0);
-}
-
+	}
 
 void decimal_binary(int n)
 {
-	int i,j,p[10],num;
-	num=n;//store the original number //
-	for(i=0;n>0;i++)
-        {
-            p[i]=n%2;//remainder
-            n=n/2; //quotient
-        }
+	int sum=0,i=0,j=0,x,y,num;
+	num=n;
+	x=sqrt(n*n);
+	do
+	{
+	            sum=sum*10+x%2;
+		x=x/2;
+		i++;
+	}while(x!=0);
+	x=sum;
 
+	if(n+(sqrt(n*n))==0)
+	{
+		x=sum*10+1;
+		i++;
+	}
+	sum=0;
+	while(j!=i)
+	{
+		sum=sum*10+x%10;
+		x=x/10;
+		j++;
+	}
 	printf("The binary equivalent of %d is: ",num);
-	for(j=i-1;j>=0;j--)
-	 printf("%d",p[j]);
+	 printf("%d",sum);
 	 printf("\n\n");
 }
 
@@ -54,14 +64,14 @@ void decimal_binary(int n)
 
 void binary_decimal(int n)
 {
-    int sum=0,binary,base=1,rem,num;
+    int sum=0,i=0,num;
     num=n;
     while(n!=0)
     {
-        rem=n%10;
-        sum=sum+rem*base;
+
+        sum=sum+(n%10)*pow(2,i);
         n=n/10;
-        base=base*2;
+        i++;
     }
     printf("Decimal equivalent of the binary number %d is:%d",num,sum);
     printf("\n\n");
